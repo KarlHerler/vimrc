@@ -7,13 +7,18 @@ syntax enable
 " --------------------------------
 " Styling and plugins
 " --------------------------------
+
+if !has("gui_running")
+  let g:solarized_termtrans = 1
+  let g:solarized_termcolors=256
+endif
+set background=dark
+colorscheme solarized " for some reason solarized didnt like regular vim
 if has('gui_running')
-  set background=dark
-  colorscheme solarized " for some reason solarized didnt like regular vim
   set guioptions-=T  " no toolbar
   set guioptions-=L  " no scrollbar on NERDTree
 endif
-set guifont=Source\ Code\ Pro\ 10
+set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 10
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
@@ -152,3 +157,4 @@ function! StripWhitespace ()
 endfunction
 map ,s :call StripWhitespace ()<CR>
 
+autocmd BufWritePre * :%s/\s\+$//e
