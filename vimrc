@@ -10,15 +10,21 @@ syntax enable
 
 if !has("gui_running")
   let g:solarized_termtrans = 1
-  let g:solarized_termcolors=256
+  let g:solarized_termcolors=256 " this breaks styling when using iterm2 and ssh
 endif
 set background=dark
 colorscheme solarized " for some reason solarized didnt like regular vim
 if has('gui_running')
   set guioptions-=T  " no toolbar
   set guioptions-=L  " no scrollbar on NERDTree
+
+  vmap <C-c> "+yi
+  vmap <C-x> "+c
+  vmap <C-v> c<ESC>"+p
+  imap <C-v> <C-r><C-o>+
 endif
-set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 10
+set guifont=Inconsolata\ for\ Powerline\ Medium\ 11
+"set guifont=Inconsolata\ 11
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
