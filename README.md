@@ -10,6 +10,6 @@ Clone this repo down, get the submodules and link the `.vimrc` to your `.vimrc` 
 mv -r vimrc ~/.vim
 git submodule init
 git submodule update
-ln -s ~/.vim/vimrc ~/.vimrc  # Assumes that you've cloned this repo in home (as in step one)
+ln -s ~/.vim/vimrc ~/.vimrc  # Assumes that you've cloned this repo in home
 ```
 
