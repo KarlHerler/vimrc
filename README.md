@@ -9,7 +9,7 @@ The plugins used require [pathogen](https://github.com/tpope/vim-pathogen) to be
 this is easiest done after installing this repo but before starting vim by executing:
 
 ```
-mkdir .vim/autoload
+mkdir -p ~/.vim/autoload
 curl https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim >pathogen.vim
 ```
 
